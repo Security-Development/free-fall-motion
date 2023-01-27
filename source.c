@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
-#define MAP_SIZE 15
+#define MAP_SIZE 20
 
 int map[MAP_SIZE][MAP_SIZE] = { 0, };
 
@@ -30,9 +30,9 @@ int main() {
 		s = (v0 * t) + ( (a * pow(t, 2) / 2 )  ); // 거리 
 		map[down][5] = 0;
 		map[--down][5] = 1;
-		printf("속력 : %f(m/s) | 거리 : %fm\n", 1 - (v / 100 * 2), s);
+		printf("속력 : %f(m/s) | 거리 : %fm\n", (MAP_SIZE * (10 * 0.5)) - v, s);
 		view_map();
-		Sleep( 1 - (v / 100 * 2));
+		Sleep( (MAP_SIZE * (10 * 0.5)) - v);
 	}
 	
 	return 0;
